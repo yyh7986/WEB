@@ -82,3 +82,10 @@ function go_save(){
 		document.joinForm.submit();
 	}
 }
+
+$(function(){
+	$('.hmenu').click(function(){
+		$('.hmenu div').toggleClass('active');
+		$('.gnb').toggle(300, function(){});
+	})
+})
