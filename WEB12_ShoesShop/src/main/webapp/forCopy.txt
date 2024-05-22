@@ -1,0 +1,50 @@
+// 커넥션풀 설정
+<Resource 
+      name="jdbc/MysqlDB" 
+      auth="Container"
+      type="javax.sql.DataSource" 
+      driverClassName="com.mysql.cj.jdbc.Driver"
+      url="jdbc:mysql://localhost:3306/shop"
+      username="root" 
+      password="adminuser" 
+      factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+      maxActive="500" 
+/>
+               
+
+// 태그 라이브러리
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+// 링크
+<link  rel="stylesheet" href="css/header_footer.css">
+<link  rel="stylesheet" href="css/main.css">
+<link  rel="stylesheet" href="css/section.css">
+<link  rel="stylesheet" href="css/product.css">
+<link  rel="stylesheet" href="css/mypage.css">
+
+<script src="script/jquery-3.7.1.min.js"></script>
+<script src="script/member.js"></script>
+<script src="script/mypage.js"></script>       
+
+//
+HttpSession session = request.getSession();
+		MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
+		if (mvo == null) {
+		    response.sendRedirect("shop.do?command=loginForm");
+		}else {        
+		}
+		
+//
+<%@ include file="../header.jsp" %>
+
+<section>
+
+	<%@ include file="sub_image_menu.jsp" %>
+		<article>
+
+		</article>
+</section>
+
+
+<%@ include file="../footer.jsp" %>

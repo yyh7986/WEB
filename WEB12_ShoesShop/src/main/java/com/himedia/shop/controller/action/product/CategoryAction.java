@@ -15,19 +15,23 @@ public class CategoryAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String kind = request.getParameter("kind");
 		
 		ProductDao pdao = ProductDao.getInstance();
-		ArrayList<ProductVO> list = pdao.selectKindProduct(kind);
+		ArrayList<ProductVO> list = pdao.selectKindProduct( kind );
 		
-		String kindList[] = {"", "Heels", "Boots", "Sandals", "Sneakers", "Sleepers", };
+		String kindList[] = { "", "Heels", "Boots", "Sandals", "Snickers", "Slipers",  };
 		
 		request.setAttribute("kindProduct", list);
-		request.setAttribute("kind", kindList[Integer.parseInt(kind)]);
+		request.setAttribute("kind", kindList[ Integer.parseInt(kind) ] );
 		request.getRequestDispatcher("product/productKind.jsp").forward(request, response);
-		
-		
+
 	}
 
 }
+
+
+
+
+

@@ -6,6 +6,10 @@
 	border: 1px solid red;
 }
 
+a {
+	text-decoration: none;
+}
+
 header {
 	width: 100%;
 	display: flex;
@@ -22,6 +26,7 @@ header {
 #logo {
 	flex: 1;
 }
+
 
 .gnb {
 	flex: 5;

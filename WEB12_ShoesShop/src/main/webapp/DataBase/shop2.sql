@@ -66,6 +66,19 @@ insert into qna ( subject, content, userid)
 values( '배송이 많이 지연되고 있습니다', '언제 받을 수 있나요', 'two');
 insert into qna ( subject, content, userid) 
 values( '불량품 교환 문의', '교환 또는 환불 등의 안내가 필요합니다. 유선안내부탁드려요', 'one');
+insert into qna (subject, content, userid) 
+values('배송관련 문의입니다', '현재 배송상태와 예상 배송일을 답변 부탁합니다', 'one');
+insert into qna (subject, content, userid) 
+values( '환불관련', '환불절차 안내부탁드려요.... 배송사 선택은 어떻게 되는지도...', 'two');
+insert into qna ( subject, content, userid) 
+values( '사이즈 교환 하고 싶어요', '사이즈가 예상보다 작습니다. 교환절차를 안내부탁드려요', 'one');
+insert into qna ( subject, content, userid) 
+values( '배송이 많이 지연되고 있습니다', '언제 받을 수 있나요', 'two');
+insert into qna ( subject, content, userid) 
+values( '불량품 교환 문의', '교환 또는 환불 등의 안내가 필요합니다. 유선안내부탁드려요', 'one');
+
+delete from qna;
+select * from qna;
 
 
 
@@ -106,9 +119,15 @@ as
 select pseq, name, price2, image from product  where bestyn='Y'  order by indate desc limit 4;
 
 
+select * from orders;
+select * from order_detail where oseq=4;
 
+update order_detail set result='2'
+where odseq in (7,8,9);
 
+select * from order_detail;
 
+select * from cart;
 
 
 

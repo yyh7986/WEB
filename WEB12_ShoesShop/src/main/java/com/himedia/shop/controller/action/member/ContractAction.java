@@ -12,8 +12,9 @@ public class ContractAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		request.getRequestDispatcher("member/contract.jsp").forward(request, response);
+
 	}
 
 }

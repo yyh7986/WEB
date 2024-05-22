@@ -42,24 +42,22 @@ public class ProductDao {
 	public ArrayList<ProductVO> newList() {
 		ArrayList<ProductVO> list = new ArrayList<ProductVO>();
 		con = Db.getConnection();
-	    String sql = "select * from new_pro_view";
-	    try {
-	    	pstmt = con.prepareStatement(sql);
-	        rs = pstmt.executeQuery();
-	        while(rs.next()) {
-	        	ProductVO pvo = new ProductVO();
-	            pvo.setPseq(rs.getInt("pseq"));
-	            pvo.setName(rs.getString("name"));
-	            pvo.setPrice2(rs.getInt("price2"));
-	            pvo.setImage(rs.getString("image"));
-	            
-	            list.add(pvo);
-	        }   
-	      } catch (SQLException e) {
-	         e.printStackTrace();
-	      }
-	      return list;
-	   }
+		String sql = "select * from new_pro_view";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while( rs.next() ) {
+				ProductVO pvo = new ProductVO();
+				pvo.setPseq( rs.getInt("pseq") );
+				pvo.setName( rs.getString("name") );
+				pvo.setPrice2( rs.getInt("price2") );
+				pvo.setImage( rs.getString("image") );
+				list.add(pvo);
+			}
+		} catch (SQLException e) { e.printStackTrace();
+		} finally { 	Db.close(con, pstmt, rs);  }
+		return list;
+	}
 
 	public ArrayList<ProductVO> selectKindProduct(String kind) {
 		ArrayList<ProductVO> list = new ArrayList<ProductVO>();
@@ -69,33 +67,29 @@ public class ProductDao {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, kind);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while( rs.next() ) {
 				ProductVO pvo = new ProductVO();
-				pvo.setPseq(rs.getInt("pseq"));
-				pvo.setName(rs.getString("name"));
-				pvo.setPrice2(rs.getInt("price2"));
-				pvo.setImage(rs.getString("image"));
-				pvo.setSavefilename(rs.getString("savefilename"));
+				pvo.setPseq( rs.getInt("pseq") );
+				pvo.setName( rs.getString("name") );
+				pvo.setPrice2( rs.getInt("price2") );
+				pvo.setImage( rs.getString("image") );
+				pvo.setSavefilename( rs.getString("savefilename") );
 				list.add(pvo);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			Db.close(con, pstmt, rs);
-		}
-		
+		} catch (SQLException e) { e.printStackTrace();
+		} finally { 	Db.close(con, pstmt, rs);  }
 		return list;
 	}
 
-	public ProductVO getProduct(int pseq) {
+	public ProductVO getProduct( int pseq ) {
 		ProductVO pvo = new ProductVO();
 		con = Db.getConnection();
-		String sql = "select * from product where pseq=?";
+		String sql = "select * from product where pseq = ?";
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, pseq);
+			pstmt.setInt(1,  pseq);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if( rs.next() ) {
 				pvo.setPseq(rs.getInt("pseq"));
 				pvo.setName(rs.getString("name"));
 				pvo.setKind(rs.getString("kind"));
@@ -107,14 +101,25 @@ public class ProductDao {
 				pvo.setUseyn(rs.getString("useyn"));
 				pvo.setBestyn(rs.getString("bestyn"));
 				pvo.setIndate(rs.getTimestamp("indate"));
-				pvo.setSavefilename(rs.getString("savefilename"));
+				pvo.setSavefilename( rs.getString("savefilename"));
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			Db.close(con, pstmt, rs);
-		}
+		} catch (SQLException e) {  e.printStackTrace();
+		} finally { 	Db.close(con, pstmt, rs);  }
 		return pvo;
 	}
 	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

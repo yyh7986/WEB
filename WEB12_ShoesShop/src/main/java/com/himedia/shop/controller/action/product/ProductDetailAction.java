@@ -14,15 +14,16 @@ public class ProductDetailAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		int pseq = Integer.parseInt(request.getParameter("pseq"));
+		
+		int pseq = Integer.parseInt( request.getParameter("pseq") );
 		
 		ProductDao pdao = ProductDao.getInstance();
-		ProductVO pvo = pdao.getProduct(pseq);
+		ProductVO pvo = pdao.getProduct( pseq );
 		
 		request.setAttribute("productVO", pvo);
 		
 		request.getRequestDispatcher("product/productDetail.jsp").forward(request, response);
+
 	}
 
 }

@@ -3,8 +3,9 @@ package com.himedia.shop.dto;
 import java.sql.Timestamp;
 
 public class MemberVO {
+
 	private String userid;
-	private String pwd;   
+    private String pwd;     
     private String name;
     private String email;
     private String zip_num;
@@ -13,7 +14,6 @@ public class MemberVO {
     private String phone;
     private String useyn;
     private Timestamp indate;
-    
     
 	public String getUserid() {
 		return userid;

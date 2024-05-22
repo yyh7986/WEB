@@ -38,7 +38,7 @@ public class ShoesShopServlet extends HttpServlet {
 		Action ac = af.getAction(command);
 		
 		if( ac == null ) System.out.println("2. Action 조립 오류");
-		else ac.execute(request, response);
+		else ac.execute(request, response);		
 	}
 
 	/**

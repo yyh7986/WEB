@@ -16,13 +16,13 @@ public class ProductVO {
     private Timestamp indate;
     private String savefilename;
     
-    
 	public String getSavefilename() {
 		return savefilename;
 	}
 	public void setSavefilename(String savefilename) {
 		this.savefilename = savefilename;
 	}
+	
 	public Integer getPseq() {
 		return pseq;
 	}

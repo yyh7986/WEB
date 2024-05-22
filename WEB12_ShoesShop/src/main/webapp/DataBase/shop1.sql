@@ -27,6 +27,7 @@ CREATE TABLE address
 
 select * from address;
 
+
 CREATE TABLE cart
 (
 	cseq int NOT NULL AUTO_INCREMENT,

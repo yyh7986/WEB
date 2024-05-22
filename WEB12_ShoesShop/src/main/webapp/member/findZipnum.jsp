@@ -9,28 +9,31 @@
 </head>
 <body>
 <div id="popup">
-	<form method="post" name="formm" action="shop.do?command=findZipnum">
-		동 이름 : <input name="dong" type="text">
-		<input type="submit" value="찾기" class="submit">
-	</form>
-	
-	<table id="zipcode" border="1">
-		<tr><th width="100">우편번호</th><th>주소</th></tr>
-		<c:forEach items="${addressList}" var="add">
-			<tr>
-				<td>
-					<a href="#" onclick="addressOk('${add.zip_num }', '${add.sido}', '${add.gugun}', '${add.dong}')">
-						${add.zip_num }
-					</a>
-				</td>
-				<td>
-					<a href="#" onclick="addressOk('${add.zip_num }', '${add.sido}', '${add.gugun}', '${add.dong}')">
-						${add.sido}${add.gugun}${add.dong}
-					</a>
-				</td>
-			</tr>
-		</c:forEach>
-	</table>
+		<form method="post" name="formm" action="shop.do?command=findZipnum">
+				동 이름 : <input name="dong"  type="text">
+				<input type="submit" value="찾기"  class="submit">
+		</form>
+		
+		<table id="zipcode" border="1">
+				<tr><th width="100">우편번호</th><th>주소</th></tr>
+				<c:forEach items="${addressList}" var="add">
+					<tr>
+						<td>
+							<a href="#" onClick="addressOK('${add.zip_num}', '${add.sido}' , '${add.gugun}' , '${add.dong}')">
+								${add.zip_num}
+							</a>
+						</td>
+						<td>
+							<a href="#" onClick="addressOK('${add.zip_num}', '${add.sido}' , '${add.gugun}' , '${add.dong}')">
+								${add.sido} ${add.gugun} ${add.dong}
+							</a>
+						</td>
+					</tr>
+				</c:forEach>
+		</table>
 </div>
 </body>
 </html>
+
+
+

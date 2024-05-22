@@ -3,15 +3,15 @@ package com.himedia.shop.dto;
 import java.sql.Timestamp;
 
 public class CartVO {
+
 	private int cseq;
-	private String userid;
-	private int pseq;
+	private String userid;  
+	private int pseq;  
 	private String mname;
 	private String pname;
 	private int quantity;
 	private int price2;
 	private Timestamp indate;
-	
 	
 	public int getCseq() {
 		return cseq;
@@ -61,6 +61,7 @@ public class CartVO {
 	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
+	
 	
 	
 }

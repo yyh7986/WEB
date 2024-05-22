@@ -9,7 +9,6 @@ public class AddressVO {
 	private String zip_code;
 	private String bunji;
 	
-	
 	public String getZip_num() {
 		return zip_num;
 	}
