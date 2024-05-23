@@ -2,6 +2,9 @@ package com.himedia.shop.controller;
 
 import com.himedia.shop.controller.action.Action;
 import com.himedia.shop.controller.action.IndexAction;
+import com.himedia.shop.controller.action.admin.AdminAction;
+import com.himedia.shop.controller.action.admin.AdminLoginAction;
+import com.himedia.shop.controller.action.admin.AdminProductListAction;
 import com.himedia.shop.controller.action.customer.QnaListAction;
 import com.himedia.shop.controller.action.customer.QnaViewAction;
 import com.himedia.shop.controller.action.customer.WriteQnaAction;
@@ -73,6 +76,11 @@ public class ActionFactory {
 		else if( command.equals("qnaView") ) ac = new QnaViewAction();
 		else if( command.equals("writeQnaForm") ) ac = new WriteQnaFormAction();
 		else if( command.equals("writeQna") ) ac = new WriteQnaAction();
+
+		// admin
+		else if( command.equals("admin") ) ac = new AdminAction();
+		else if( command.equals("adminLogin") ) ac = new AdminLoginAction();
+		else if( command.equals("adminProductList") ) ac = new AdminProductListAction();
 		
 		return ac;
 	}

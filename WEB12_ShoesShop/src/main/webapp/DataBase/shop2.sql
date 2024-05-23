@@ -130,9 +130,11 @@ select * from order_detail;
 select * from cart;
 
 
+-- 관리자 입력
+insert into admins values('admin', 'admin', '관리자', '010-7777-7777');
+insert into admins values('scott', '1234', '홍길동', '010-6400-6068');
 
-
-
+commit;
 
 
 
