@@ -9,7 +9,7 @@
 
 <!-- 신상품 -->
 <div id="NewItem">
-	<h2>New Item</h2>
+	<h2>New Item Item</h2>
 	<div class="products">
 		<c:forEach items="${newList}" var="productVO" varStatus="status">
 			<c:choose>
